@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Typist from 'react-typist';
+import { Link as ScrollLink, Element as ScrollElement } from 'react-scroll';
 
 import DownArrow from 'components/arrow/DownArrow.jsx';
 
@@ -66,14 +67,18 @@ class App extends Component {
             {this.renderTypist()}
           </h1>
 
-          <DownArrow />
+          <ScrollLink smooth={true} to="blogPosts">
+            <DownArrow />
+          </ScrollLink>
         </header>
 
-        <section>
-          <h2 className="App-section-header">
-            Recent blog posts
-          </h2>
-        </section>
+        <ScrollElement name="blogPosts">
+          <section>
+            <h2 className="App-section-header">
+              Recent blog posts
+            </h2>
+          </section>
+        </ScrollElement>
       </div>
     );
   }
