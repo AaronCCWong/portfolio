@@ -1,0 +1,41 @@
+@import "sass/shared";
+
+.App {
+  min-width: 330px;
+}
+
+.App-header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.App-header-title {
+  bottom: 0;
+  display: inline;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.App-section-header {
+  font-family: $roboto-medium;
+}
+
+.Typist {
+  display: inline-block;
+  font-family: $roboto-regular;
+  font-size: 48px;
+  color: $white;
+}
+
+.Portfolio-down-arrow {
+  bottom: 50px;
+  cursor: pointer;
+}
