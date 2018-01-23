@@ -1,0 +1,47 @@
+import React from 'react';
+
+import 'components/Posts.scss';
+
+const recentPosts = [
+  {
+    title: 'Notes on elementary graph algorithms. Part 1: Breadth-first search',
+    date: 'Nov 27, 2017',
+    img: '//cdn-images-1.medium.com/max/645/1*sCHOtq8o_e3-yQDUU3_EYg.png',
+    url: '//medium.com/@aaronwong_65108/notes-on-elementary-graph-algorithms-part-1-breadth-first-search-8544404cde59'
+  },
+  {
+    title: 'My Journey Into Deep learning',
+    date: 'May 25, 2017',
+    img: '//cdn-images-1.medium.com/fit/t/1600/480/1*vbSwweNHPpkMutOQ9fpmhg.jpeg',
+    url: '//hackernoon.com/my-journey-into-deep-learning-9104057a642f'
+  }
+];
+
+const Posts = () => {
+  const renderPosts = () => recentPosts.map(post => (
+    <a href={post.url} key={post.title}>
+      <div className="Posts-item">
+        <div
+          style={{ backgroundImage: `url(${post.img})` }}
+          className="Posts-item--img"
+        />
+        <h3 className="Posts-item--title">{post.title}</h3>
+        <p className="Posts-item--date">{post.date}</p>
+      </div>
+    </a>
+  ));
+
+  return (
+    <section className="App-section">
+      <h2 className="App-section--header">
+        Recent blog posts
+      </h2>
+
+      <div className="Posts">
+        {renderPosts()}
+      </div>
+    </section>
+  );
+}
+
+export default Posts;

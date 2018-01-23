@@ -24,8 +24,13 @@
   width: 100%;
 }
 
-.App-section-header {
+.App-section {
+  padding: 15px 0;
+}
+
+.App-section--header {
   font-family: $roboto-medium;
+  margin: 0 15px;
 }
 
 .Typist {

@@ -3,6 +3,7 @@ import Typist from 'react-typist';
 import { Link as ScrollLink, Element as ScrollElement } from 'react-scroll';
 
 import DownArrow from 'components/arrow/DownArrow.jsx';
+import Posts from 'components/Posts.jsx';
 
 import 'components/App.scss';
 
@@ -73,11 +74,7 @@ class App extends Component {
         </header>
 
         <ScrollElement name="blogPosts">
-          <section>
-            <h2 className="App-section-header">
-              Recent blog posts
-            </h2>
-          </section>
+          <Posts />
         </ScrollElement>
       </div>
     );
