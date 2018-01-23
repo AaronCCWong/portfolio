@@ -35,8 +35,8 @@ class App extends Component {
           <Typist.Backspace count={6} delay={400} />
           <Typist.Delay ms={200} />
           a software developer.
-          <Typist.Backspace count={21} delay={400} />
-          a New Yorker.
+          <Typist.Backspace count={19} delay={400} />
+          New Yorker.
           <Typist.Backspace count={13} delay={400} />
         </Typist>
       );
@@ -54,6 +54,18 @@ class App extends Component {
             `
           }}
         >
+          <a href="//github.com/AaronCCWong">
+            <i className="fa fa-github App-header--icon" />
+          </a>
+          <a href="//www.linkedin.com/in/aaron-wong-92041342/">
+            <i className="fa fa-linkedin App-header--icon" />
+          </a>
+          <a href="//medium.com/@aaronwong_65108">
+            <i className="fa fa-medium App-header--icon" />
+          </a>
+          <a href="">
+            <i className="fa fa-file-pdf-o App-header--icon" />
+          </a>
           <h1 className="App-header-title">
             <Typist
               onTypingDone={this.startInfo}

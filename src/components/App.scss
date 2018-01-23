@@ -1,6 +1,7 @@
 @import "sass/shared";
 
 .App {
+  background-color: $background-grey;
   min-width: 330px;
 }
 
@@ -10,6 +11,20 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   text-align: center;
+}
+
+.App-header--icon {
+  color: $white;
+  cursor: pointer;
+  margin: 15px 10px;
+
+  &.fa {
+    font-size: 32px;
+  }
+
+  &:hover {
+    color: #49bf9d;
+  }
 }
 
 .App-header-title {
@@ -30,7 +45,7 @@
 
 .App-section--header {
   font-family: $roboto-medium;
-  margin: 0 15px;
+  margin: 0 15px 15px;
 }
 
 .Typist {
