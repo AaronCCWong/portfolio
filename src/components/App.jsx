@@ -54,6 +54,9 @@ class App extends Component {
             `
           }}
         >
+          <a href="mailto:aarn.wong@gmail.com">
+            <i className="fa fa-envelope-o App-header--icon" />
+          </a>
           <a href="//github.com/AaronCCWong">
             <i className="fa fa-github App-header--icon" />
           </a>
@@ -63,7 +66,7 @@ class App extends Component {
           <a href="//medium.com/@aaronwong_65108">
             <i className="fa fa-medium App-header--icon" />
           </a>
-          <a href="">
+          <a href={`${process.env.PUBLIC_URL}/AaronWong.pdf`}>
             <i className="fa fa-file-pdf-o App-header--icon" />
           </a>
           <h1 className="App-header-title">
