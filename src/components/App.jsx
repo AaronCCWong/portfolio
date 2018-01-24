@@ -66,7 +66,7 @@ class App extends Component {
           <a href="//medium.com/@aaronwong_65108">
             <i className="fa fa-medium App-header--icon" />
           </a>
-          <a href={`${process.env.PUBLIC_URL}/AaronWong.pdf`}>
+          <a href="/AaronWong.pdf">
             <i className="fa fa-file-pdf-o App-header--icon" />
           </a>
           <h1 className="App-header-title">
