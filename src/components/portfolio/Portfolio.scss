@@ -6,12 +6,12 @@ body {
   padding: 0;
 }
 
-.App {
+.Portfolio {
   background-color: $background-grey;
   min-width: 330px;
 }
 
-.App-header {
+.Portfolio-header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
   text-align: center;
 }
 
-.App-header--icon {
+.Portfolio-header--icon {
   color: $white;
   cursor: pointer;
   margin: 15px 10px;
@@ -33,7 +33,7 @@ body {
   }
 }
 
-.App-header-title {
+.Portfolio-header-title {
   bottom: 0;
   display: inline;
   left: 0;
@@ -45,11 +45,11 @@ body {
   width: 100%;
 }
 
-.App-section {
+.Portfolio-section {
   padding: 15px 0;
 }
 
-.App-section--header {
+.Portfolio-section--header {
   font-family: $roboto-medium;
   margin: 0 15px 15px;
 }
