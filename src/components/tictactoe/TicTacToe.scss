@@ -1,0 +1,40 @@
+@import "sass/shared";
+
+.ttt {
+  background-color: $black;
+  height: 100vh;
+}
+
+.ttt-board--wrapper {
+  bottom: 0;
+  height: 510px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 510px;
+}
+
+.ttt-block {
+  background-color: $white;
+  display: inline-block;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  width: 150px;
+}
+
+.ttt-block--selectable {
+  cursor: pointer;
+}
+
+.ttt-mark--o,
+.ttt-mark--x {
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
