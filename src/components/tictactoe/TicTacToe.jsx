@@ -119,8 +119,27 @@ class TicTacToe extends Component {
   render() {
     return (
       <div className="ttt">
+        <h1 className="ttt-title">
+          Tic Tac Toe vs AI
+        </h1>
+
+        <h4 className="ttt-title--disclaimer">
+          Don&#39;t feel bad if you lose. Don&#39;t waste your time trying to win either because you won&#39;t.
+        </h4>
+
         <div className="ttt-board--wrapper">
           {this.renderGame()}
+
+          <section className="ttt-description">
+            <p>
+              The computer uses the minimax algorithm to decide on the best move to
+              make.
+            </p>
+
+            <a className="ttt-link" href="//github.com/AaronCCWong/portfolio/blob/ttt/src/util/tictactoe/ComputerPlayer.js#L14">
+              Click here to check out the implementation
+            </a>.
+          </section>
         </div>
       </div>
     );

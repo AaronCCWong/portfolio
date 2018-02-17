@@ -5,6 +5,21 @@
   height: 100vh;
 }
 
+.ttt-title,
+.ttt-title--disclaimer {
+  color: $white;
+  font-family: $roboto-medium;
+  font-size: 48px;
+  margin: 0;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.ttt-title--disclaimer {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
 .ttt-board--wrapper {
   bottom: 0;
   height: 510px;
@@ -65,5 +80,20 @@
 
   &:focus {
     outline: 0;
+  }
+}
+
+.ttt-description {
+  color: $white;
+  font-family: $roboto-light;
+  padding: 30px 10px;
+}
+
+.ttt-link {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-blue;
   }
 }
