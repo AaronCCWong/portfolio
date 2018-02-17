@@ -20,9 +20,13 @@ class TicTacToe extends Component {
 
   handleChoosePosition(event) {
     const pos = event.currentTarget.getAttribute('data-position').split(',');
-    if (!this.game.board[pos[0]][pos[1]]) {
+    if (!this.game.board[pos[0]][pos[1]] && !this.state.gameOver) {
       this.game.makeMove(pos);
       this.setState({ board: this.game.board });
+      console.log(this.game.won)
+      if (this.game.won) {
+        this.setState({ gameOver: true });
+      }
     }
   }
 
@@ -45,7 +49,7 @@ class TicTacToe extends Component {
             className={classNames(
               'ttt-block',
               {
-                'ttt-block--selectable': !this.game.board[i][j],
+                'ttt-block--selectable': !this.game.board[i][j] && !this.state.gameOver,
               },
             )}
             key={`${i}|${j}`}
@@ -59,7 +63,6 @@ class TicTacToe extends Component {
   }
 
   render() {
-    console.log(this.game.board)
     return (
       <div className="ttt">
         <div className="ttt-board--wrapper">
