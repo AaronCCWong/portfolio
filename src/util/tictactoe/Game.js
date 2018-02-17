@@ -20,7 +20,7 @@ class Game {
 
   makeMove(pos) {
     this.tttboard.placeMark(pos, this.currentPlayer);
-    if (this.tttboard.won()) {
+    if (this.won) {
       return;
     }
     if (this.currentPlayer === this.humanPlayer) {

@@ -23,7 +23,6 @@ class TicTacToe extends Component {
     if (!this.game.board[pos[0]][pos[1]] && !this.state.gameOver) {
       this.game.makeMove(pos);
       this.setState({ board: this.game.board });
-      console.log(this.game.won)
       if (this.game.won) {
         this.setState({ gameOver: true });
       }
