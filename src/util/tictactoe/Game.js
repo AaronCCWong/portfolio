@@ -14,8 +14,20 @@ class Game {
     return this.tttboard.board;
   }
 
+  get humanWon() {
+    return this.tttboard.won(this.humanPlayer.mark);
+  }
+
+  get computerWon() {
+    return this.tttboard.won(this.computerPlayer.mark);
+  }
+
   get gameOver() {
     return this.tttboard.gameOver();
+  }
+
+  winner() {
+    return this.tttboard.winner(this);
   }
 
   makeMove(pos) {

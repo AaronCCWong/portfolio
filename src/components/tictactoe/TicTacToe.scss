@@ -38,3 +38,32 @@
   right: 0;
   top: 0;
 }
+
+.ttt-board--message {
+  color: $white;
+  font-family: $roboto-medium;
+  font-size: 170px;
+
+  circle,
+  line {
+    stroke: $white;
+  }
+}
+
+.ttt-board--message-tie {
+  text-align: center;
+}
+
+.ttt-board--btn {
+  background-color: $white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 10px;
+
+  &:focus {
+    outline: 0;
+  }
+}

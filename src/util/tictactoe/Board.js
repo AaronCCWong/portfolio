@@ -35,8 +35,17 @@ class Board {
     return true;
   }
 
-  won() {
-    if (!this.isEmpty() && (this.verticalWin() || this.horizontalWin() || this.diagonalWin())) {
+  winner(game) {
+    if (this.verticalWin(game.humanPlayer.mark) ||
+      this.horizontalWin(game.humanPlayer.mark) ||
+      this.diagonalWin(game.humanPlayer.mark)) {
+      return game.humanPlayer;
+    }
+    return game.computerPlayer;
+  }
+
+  won(mark) {
+    if (!this.isEmpty() && (this.verticalWin(mark) || this.horizontalWin(mark) || this.diagonalWin(mark))) {
       return true;
     }
     return false;
@@ -50,39 +59,39 @@ class Board {
         }
       }
     }
-    if (!this.won()) {
+    if (!(this.won('x') || this.won('o'))) {
       return true;
     }
   }
 
   gameOver() {
-    if (this.won() || this.tie()) {
+    if (this.won('x') || this.won('o') || this.tie()) {
       return true;
     }
     return false;
   }
 
-  verticalWin() {
-    if ((this.board[0][0] && this.board[0][0] === this.board[0][1] && this.board[0][0] === this.board[0][2]) ||
-      (this.board[1][0] && this.board[1][0] === this.board[1][1] && this.board[1][0] === this.board[1][2]) ||
-      (this.board[2][0] && this.board[2][0] === this.board[2][1] && this.board[2][0] === this.board[2][2])) {
+  verticalWin(mark) {
+    if ((mark === this.board[0][0] && this.board[0][0] === this.board[0][1] && this.board[0][0] === this.board[0][2]) ||
+      (mark === this.board[1][0] && this.board[1][0] === this.board[1][1] && this.board[1][0] === this.board[1][2]) ||
+      (mark === this.board[2][0] && this.board[2][0] === this.board[2][1] && this.board[2][0] === this.board[2][2])) {
       return true;
     }
     return false;
   }
 
-  horizontalWin() {
-    if ((this.board[0][0] && this.board[0][0] === this.board[1][0] && this.board[0][0] === this.board[2][0]) ||
-      (this.board[0][1] && this.board[0][1] === this.board[1][1] && this.board[0][1] === this.board[2][1]) ||
-      (this.board[0][2] && this.board[0][2] === this.board[1][2] && this.board[0][2] === this.board[2][2])) {
+  horizontalWin(mark) {
+    if ((mark === this.board[0][0] && this.board[0][0] === this.board[1][0] && this.board[0][0] === this.board[2][0]) ||
+      (mark === this.board[0][1] && this.board[0][1] === this.board[1][1] && this.board[0][1] === this.board[2][1]) ||
+      (mark === this.board[0][2] && this.board[0][2] === this.board[1][2] && this.board[0][2] === this.board[2][2])) {
       return true;
     }
     return false;
   }
 
-  diagonalWin() {
-    if ((this.board[0][0] && this.board[0][0] === this.board[1][1] && this.board[0][0] === this.board[2][2]) ||
-      (this.board[0][2] && this.board[0][2] === this.board[1][1] && this.board[0][2] === this.board[2][0])) {
+  diagonalWin(mark) {
+    if ((mark === this.board[0][0] && this.board[0][0] === this.board[1][1] && this.board[0][0] === this.board[2][2]) ||
+      (mark === this.board[0][2] && this.board[0][2] === this.board[1][1] && this.board[0][2] === this.board[2][0])) {
       return true;
     }
     return false;

@@ -4,6 +4,7 @@ import Board from 'util/tictactoe/Board.js';
 class ComputerPlayer extends Player {
   constructor(mark) {
     super(mark, false);
+    this.humanMark = mark === 'x' ? 'o' : 'x';
   }
 
   choosePosition(game) {
@@ -34,7 +35,7 @@ class ComputerPlayer extends Player {
 
   minVal(board) {
     if (board.gameOver()) {
-      if (board.won()) {
+      if (board.won(this.mark)) {
         return 1;
       } else if (board.tie()) {
         return 0;
@@ -48,7 +49,7 @@ class ComputerPlayer extends Player {
           const simulatedBoard = Board.generateSimBoard(
             board.board,
             [i, j],
-            this.mark === 'x' ? 'o' : 'x'
+            this.humanMark
           );
           const move = this.maxVal(simulatedBoard);
           if (move < utility) {
@@ -62,7 +63,7 @@ class ComputerPlayer extends Player {
 
   maxVal(board) {
     if (board.gameOver()) {
-      if (board.won()) {
+      if (board.won(this.humanMark)) {
         return -1;
       } else if (board.tie()) {
         return 0;
