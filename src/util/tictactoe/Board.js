@@ -1,6 +1,19 @@
 class Board {
-  constructor() {
-    this.board = [
+  static generateSimBoard(board, pos, mark) {
+    const newBoard = [['', '', ''], ['', '', ''], ['', '', '']];
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        newBoard[i][j] = board[i][j];
+      }
+    }
+    newBoard[pos[0]][pos[1]] = mark;
+    const simBoard = new Board(newBoard);
+    return simBoard;
+  }
+
+  constructor(board) {
+    this.board = board ||
+    [
       ['', '', ''],
       ['', '', ''],
       ['', '', ''],
@@ -24,6 +37,26 @@ class Board {
 
   won() {
     if (!this.isEmpty() && (this.verticalWin() || this.horizontalWin() || this.diagonalWin())) {
+      return true;
+    }
+    return false;
+  }
+
+  tie() {
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (!this.board[i][j]) {
+          return false;
+        }
+      }
+    }
+    if (!this.won()) {
+      return true;
+    }
+  }
+
+  gameOver() {
+    if (this.won() || this.tie()) {
       return true;
     }
     return false;

@@ -14,13 +14,13 @@ class Game {
     return this.tttboard.board;
   }
 
-  get won() {
-    return this.tttboard.won();
+  get gameOver() {
+    return this.tttboard.gameOver();
   }
 
   makeMove(pos) {
     this.tttboard.placeMark(pos, this.currentPlayer);
-    if (this.won) {
+    if (this.gameOver) {
       return;
     }
     if (this.currentPlayer === this.humanPlayer) {
