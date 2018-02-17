@@ -1,0 +1,22 @@
+@import "sass/shared";
+
+.Posts {
+  text-align: center;
+}
+
+.Posts-item {
+  @include card-item;
+}
+
+.Posts-item--img {
+  @include card-item-img;
+}
+
+.Posts-item--title {
+  @include card-item-title;
+}
+
+.Posts-item--date {
+  font-family: $roboto-light;
+  font-size: 12px;
+}

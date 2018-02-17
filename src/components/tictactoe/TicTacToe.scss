@@ -1,0 +1,99 @@
+@import "sass/shared";
+
+.ttt {
+  background-color: $black;
+  height: 100vh;
+}
+
+.ttt-title,
+.ttt-title--disclaimer {
+  color: $white;
+  font-family: $roboto-medium;
+  font-size: 48px;
+  margin: 0;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.ttt-title--disclaimer {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.ttt-board--wrapper {
+  bottom: 0;
+  height: 510px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 510px;
+}
+
+.ttt-block {
+  background-color: $white;
+  display: inline-block;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  width: 150px;
+}
+
+.ttt-block--selectable {
+  cursor: pointer;
+}
+
+.ttt-mark--o,
+.ttt-mark--x {
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ttt-board--message {
+  color: $white;
+  font-family: $roboto-medium;
+  font-size: 170px;
+
+  circle,
+  line {
+    stroke: $white;
+  }
+}
+
+.ttt-board--message-tie {
+  text-align: center;
+}
+
+.ttt-board--btn {
+  background-color: $white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 10px;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.ttt-description {
+  color: $white;
+  font-family: $roboto-light;
+  padding: 30px 10px;
+}
+
+.ttt-link {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-blue;
+  }
+}

@@ -2,6 +2,9 @@
 
 //colors
 $background-grey: rgba(216, 216, 216, 0.16);
+$black: #000000;
+$dark-blue: #0c2c4c;
+$dark-shadow: rgba(0, 0, 0, 0.8);
 $shadow: rgba(0, 0, 0, 0.08);
 $white: #ffffff;
 
@@ -9,3 +12,29 @@ $white: #ffffff;
 $roboto-regular: "RobotoRegular";
 $roboto-medium: "RobotoMedium";
 $roboto-light: "RobotoLight";
+
+@mixin card-item {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 $shadow;
+  color: #333333;
+  display: inline-block;
+  margin: 0 15px 15px;
+  overflow: hidden;
+  text-decoration: none;
+  width: 300px;
+}
+
+@mixin card-item-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 300px;
+  width: 100%;
+}
+
+@mixin card-item-title {
+  font-family: $roboto-medium;
+  height: 75px;
+}
