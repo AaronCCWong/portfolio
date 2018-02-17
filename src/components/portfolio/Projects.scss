@@ -1,0 +1,9 @@
+@import "sass/shared";
+
+.Projects {
+  text-align: center;
+}
+
+.Projects-item {
+  @include card-item;
+}

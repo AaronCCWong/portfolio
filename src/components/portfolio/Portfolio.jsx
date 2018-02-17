@@ -4,6 +4,7 @@ import { Link as ScrollLink, Element as ScrollElement } from 'react-scroll';
 
 import DownArrow from 'components/portfolio/arrow/DownArrow.jsx';
 import Posts from 'components/portfolio/Posts.jsx';
+import Projects from 'components/portfolio/Projects.jsx';
 
 import 'components/portfolio/Portfolio.scss';
 
@@ -91,6 +92,8 @@ class Portfolio extends Component {
         <ScrollElement name="blogPosts">
           <Posts />
         </ScrollElement>
+
+        <Projects />
       </div>
     );
   }

@@ -32,8 +32,8 @@ const Posts = () => {
   ));
 
   return (
-    <section className="App-section">
-      <h2 className="App-section--header">
+    <section className="Portfolio-section">
+      <h2 className="Portfolio-section--header">
         Recent blog posts
       </h2>
 
