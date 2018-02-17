@@ -136,7 +136,7 @@ class TicTacToe extends Component {
               make.
             </p>
 
-            <a className="ttt-link" href="//github.com/AaronCCWong/portfolio/blob/ttt/src/util/tictactoe/ComputerPlayer.js#L14">
+            <a className="ttt-link" href="//github.com/AaronCCWong/portfolio/blob/master/src/util/tictactoe/ComputerPlayer.js#L15">
               Click here to check out the implementation
             </a>.
           </section>
