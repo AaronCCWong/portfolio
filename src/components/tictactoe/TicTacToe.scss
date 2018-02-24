@@ -3,6 +3,7 @@
 .ttt {
   background-color: $black;
   height: 100vh;
+  min-width: 515px;
 }
 
 .ttt-title,
@@ -18,6 +19,11 @@
 .ttt-title--disclaimer {
   font-size: 18px;
   padding-top: 10px;
+}
+
+.ttt-board {
+  position: relative;
+  height: 520px;
 }
 
 .ttt-board--wrapper {
@@ -86,7 +92,9 @@
 .ttt-description {
   color: $white;
   font-family: $roboto-light;
+  margin: 0 auto;
   padding: 30px 10px;
+  width: 510px;
 }
 
 .ttt-link {
@@ -94,6 +102,6 @@
   text-decoration: none;
 
   &:hover {
-    color: $dark-blue;
+    color: $light-blue;
   }
 }
