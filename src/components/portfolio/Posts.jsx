@@ -4,6 +4,12 @@ import 'components/portfolio/Posts.scss';
 
 const recentPosts = [
   {
+    title: 'I created an AI that beats me at tic-tac-toe',
+    date: 'Feb 24, 2018',
+    img: '//cdn-images-1.medium.com/max/800/1*HHUIYu43qqo1b1BNCZl0tQ.png',
+    url: '//medium.com/@aaronwong_65108/i-created-an-ai-that-beats-me-at-tic-tac-toe-3ea6ba22cd71'
+  },
+  {
     title: 'Notes on elementary graph algorithms. Part 1: Breadth-first search',
     date: 'Nov 27, 2017',
     img: '//cdn-images-1.medium.com/max/645/1*sCHOtq8o_e3-yQDUU3_EYg.png',
