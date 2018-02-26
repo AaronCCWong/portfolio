@@ -134,12 +134,15 @@ class TicTacToe extends Component {
         </div>
 
         <section className="ttt-description">
-          <p>
+          <p className="ttt-description--body">
             The computer uses the minimax algorithm to decide on the best move to
             make.
           </p>
 
-          <a className="ttt-link" href="//github.com/AaronCCWong/portfolio/blob/master/src/util/tictactoe/ComputerPlayer.js#L15">
+          <a
+            className="ttt-link ttt-description--body"
+            href="//github.com/AaronCCWong/portfolio/blob/master/src/util/tictactoe/ComputerPlayer.js#L15"
+          >
             Click here to check out the implementation
           </a>.
         </section>
