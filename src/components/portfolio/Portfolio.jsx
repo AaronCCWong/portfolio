@@ -32,13 +32,13 @@ class Portfolio extends Component {
     if (this.state.typing) {
       return (
         <Typist onTypingDone={this.onDone}>
-           Aaron.
+          Aaron.
           <Typist.Backspace count={6} delay={400} />
           <Typist.Delay ms={200} />
           a software developer.
-          <Typist.Backspace count={19} delay={400} />
-          New Yorker.
-          <Typist.Backspace count={13} delay={400} />
+          <Typist.Backspace count={20} delay={400} />
+          n MSCS student at NYU.
+          <Typist.Backspace count={23} delay={400} />
         </Typist>
       );
     }
