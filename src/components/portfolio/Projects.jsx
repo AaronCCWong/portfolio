@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import 'components/portfolio/Projects.scss';
+import exemplifai from 'images/exemplifai.jpeg';
 import ttt from 'images/ttt.png';
 
 const Projects = () => (
@@ -11,6 +12,18 @@ const Projects = () => (
     </h2>
 
     <div className="Projects">
+      <a href="https://www.exemplifai.com">
+        <div className="Projects-item">
+          <div
+            style={{
+              backgroundImage: `url(${exemplifai})`
+            }}
+            className="Posts-item--img"
+          />
+        <h3 className="Posts-item--title">Exemplifai (WIP)</h3>
+        </div>
+      </a>
+
       <Link to="/tic-tac-toe">
         <div className="Projects-item">
           <div

@@ -1,5 +1,9 @@
 @import "sass/fonts";
 
+// sizes
+$md: 768px;
+$lg: 992px;
+
 //colors
 $background-grey: rgba(216, 216, 216, 0.16);
 $black: #000000;
@@ -14,10 +18,15 @@ $roboto-regular: "RobotoRegular";
 $roboto-medium: "RobotoMedium";
 $roboto-light: "RobotoLight";
 
+@mixin box-shadow {
+  box-shadow: 0 2px 4px 0 $shadow;
+}
+
 @mixin card-item {
+  @include box-shadow;
+
   background-color: $white;
   border-radius: 4px;
-  box-shadow: 0 2px 4px 0 $shadow;
   color: #333333;
   display: inline-block;
   margin: 0 15px 15px;
@@ -27,6 +36,8 @@ $roboto-light: "RobotoLight";
 }
 
 @mixin card-item-img {
+  @include box-shadow;
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

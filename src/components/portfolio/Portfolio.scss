@@ -57,6 +57,24 @@ body {
   margin: 0 15px 15px;
 }
 
+.Portfolio-section--about {
+  margin: 15px 15px 0;
+}
+
+.Portfolio-section--me {
+  @include box-shadow;
+
+  border-radius: 100px;
+  display: block;
+  height: 175px;
+  margin: 0 auto;
+}
+
+.Portfolio-section--bio {
+  display: inline-block;
+  font-family: $roboto-regular;
+}
+
 .Typist {
   display: inline-block;
   font-family: $roboto-regular;
@@ -67,4 +85,17 @@ body {
 .Portfolio-down-arrow {
   bottom: 50px;
   cursor: pointer;
+}
+
+@media (min-width: $md) {
+  .Portfolio-section--me-container {
+    display: inline-block;
+    width: 25%;
+  }
+
+  .Portfolio-section--bio {
+    position: relative;
+    top: -60px;
+    width: 73%;
+  }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Typist from 'react-typist';
 import { Link as ScrollLink, Element as ScrollElement } from 'react-scroll';
 
+import Bio from 'components/portfolio/Bio.jsx';
 import DownArrow from 'components/portfolio/arrow/DownArrow.jsx';
 import Posts from 'components/portfolio/Posts.jsx';
 import Projects from 'components/portfolio/Projects.jsx';
@@ -90,8 +91,10 @@ class Portfolio extends Component {
         </header>
 
         <ScrollElement name="blogPosts">
-          <Posts />
+          <Bio />
         </ScrollElement>
+
+        <Posts />
 
         <Projects />
       </div>

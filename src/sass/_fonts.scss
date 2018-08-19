@@ -10,18 +10,18 @@
 
 @font-face {
     font-family: 'RobotoMedium';
-    src: url('roboto-medium-webfont.woff2') format('woff2'),
-         url('roboto-medium-webfont.woff') format('woff'),
-         url('roboto-medium-webfont.ttf') format('truetype');
+    src: url('../fonts/Roboto/roboto-medium-webfont.woff2') format('woff2'),
+         url('../fonts/Roboto/roboto-medium-webfont.woff') format('woff'),
+         url('../fonts/Roboto/roboto-medium-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'RobotoLight';
-    src: url('roboto-light-webfont.woff2') format('woff2'),
-         url('roboto-light-webfont.woff') format('woff'),
-         url('roboto-light-webfont.ttf') format('truetype');
+    src: url('../fonts/Roboto/roboto-light-webfont.woff2') format('woff2'),
+         url('../fonts/Roboto/roboto-light-webfont.woff') format('woff'),
+         url('../fonts/Roboto/roboto-light-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
