@@ -5,12 +5,14 @@ $md: 768px;
 $lg: 992px;
 
 //colors
-$background-grey: rgba(216, 216, 216, 0.16);
+$alabaster: #faf9f9;
+$bastille: #17151d;
 $black: #000000;
 $dark-blue: #0c2c4c;
 $dark-shadow: rgba(0, 0, 0, 0.8);
+$hover-gray: #737373;
+$hover-green: #49bf9d;
 $light-blue: #3488f5;
-$shadow: rgba(0, 0, 0, 0.08);
 $white: #ffffff;
 
 // fonts
@@ -19,25 +21,30 @@ $roboto-medium: "RobotoMedium";
 $roboto-light: "RobotoLight";
 
 @mixin box-shadow {
-  box-shadow: 0 2px 4px 0 $shadow;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 @mixin card-item {
   @include box-shadow;
 
-  background-color: $white;
-  border-radius: 4px;
-  color: #333333;
+  background-color: $bastille;
+  border-radius: 3px;
+  color: $alabaster;
   display: inline-block;
   margin: 0 15px 15px;
   overflow: hidden;
+  transition: all .3s;
   text-decoration: none;
   width: 300px;
+
+  &:hover {
+    background-color: $hover-gray;
+  }
 }
 
 @mixin card-item-img {
   @include box-shadow;
-  
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

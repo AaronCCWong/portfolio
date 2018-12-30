@@ -7,7 +7,7 @@ body {
 }
 
 .Portfolio {
-  background-color: $background-grey;
+  background-color: $alabaster;
   min-width: 330px;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .Portfolio-header--icon {
-  color: $white;
+  color: $alabaster;
   cursor: pointer;
   margin: 15px 10px;
 
@@ -30,7 +30,7 @@ body {
   }
 
   &:hover {
-    color: #49bf9d;
+    color: $hover-green;
   }
 }
 
@@ -53,11 +53,13 @@ body {
 }
 
 .Portfolio-section--header {
+  color: $bastille;
   font-family: $roboto-medium;
   margin: 0 15px 15px;
 }
 
 .Portfolio-section--about {
+  color: $bastille;
   margin: 15px 15px 0;
 }
 
@@ -79,7 +81,7 @@ body {
   display: inline-block;
   font-family: $roboto-regular;
   font-size: 48px;
-  color: $white;
+  color: $alabaster;
 }
 
 .Portfolio-down-arrow {

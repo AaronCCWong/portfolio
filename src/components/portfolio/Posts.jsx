@@ -28,7 +28,7 @@ const Posts = () => {
     <a href={post.url} key={post.title}>
       <div className="Posts-item">
         <div
-          style={{ backgroundImage: `url(${post.img})` }}
+          style={{ backgroundImage: `url(${post.img})`, backgroundColor: '#ffffff' }}
           className="Posts-item--img"
         />
         <h3 className="Posts-item--title">{post.title}</h3>
