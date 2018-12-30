@@ -52,7 +52,7 @@ class Portfolio extends Component {
           className="Portfolio-header"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${process.env.PUBLIC_URL}/skyline-min.jpg)
+              linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${process.env.PUBLIC_URL}/skyline-min.webp)
             `
           }}
         >
