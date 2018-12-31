@@ -4,6 +4,12 @@ import 'components/portfolio/Posts.scss';
 
 const recentPosts = [
   {
+    title: 'Traffic Sign Classification',
+    date: 'Dec 30, 2018',
+    img: '//cdn-images-1.medium.com/max/800/1*IN1K7SDIKdOtPjuJcQ9iTw.png',
+    url: '//medium.com/@aaronwong_65108/traffic-sign-classification-6e7113d9c4d5'
+  },
+  {
     title: 'I created an AI that beats me at tic-tac-toe',
     date: 'Feb 24, 2018',
     img: '//cdn-images-1.medium.com/max/800/1*HHUIYu43qqo1b1BNCZl0tQ.png',
