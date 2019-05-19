@@ -4,6 +4,12 @@ import 'components/portfolio/Posts.scss';
 
 const recentPosts = [
   {
+    title: 'Building a Bigram Hidden Markov Model for Part-Of-Speech Tagging',
+    date: 'May 18, 2019',
+    img: '//cdn-images-1.medium.com/max/800/1*JxGuQ-I436JQPLh-UFTcSA.jpeg',
+    url: '//medium.com/@aaronwong_65108/building-a-bigram-hidden-markov-model-for-part-of-speech-tagging-1b784a87ab2c'
+  },
+  {
     title: 'Traffic Sign Classification',
     date: 'Dec 30, 2018',
     img: '//cdn-images-1.medium.com/max/800/1*IN1K7SDIKdOtPjuJcQ9iTw.png',
