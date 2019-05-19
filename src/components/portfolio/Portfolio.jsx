@@ -57,19 +57,19 @@ class Portfolio extends Component {
           }}
         >
           <a href="mailto:aarn.wong@gmail.com">
-            <i className="fa fa-envelope-o Portfolio-header--icon" />
+            <i className="fa fa-envelope-o Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a href="//github.com/AaronCCWong">
-            <i className="fa fa-github Portfolio-header--icon" />
+            <i className="fa fa-github Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a href="//www.linkedin.com/in/aaron-wong-92041342/">
-            <i className="fa fa-linkedin Portfolio-header--icon" />
+            <i className="fa fa-linkedin Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a href="//medium.com/@aaronwong_65108">
-            <i className="fa fa-medium Portfolio-header--icon" />
+            <i className="fa fa-medium Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a href="/AaronWong.pdf" target="_blank" rel="noopener noreferrer">
-            <i className="fa fa-file-pdf-o Portfolio-header--icon" />
+            <i className="fa fa-file-pdf-o Portfolio-header--icon" aria-hidden="true" />
           </a>
           <h1 className="Portfolio-header-title">
             <Typist

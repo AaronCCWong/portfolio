@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
+import HomeButton from 'components/home-button/HomeButton.jsx';
 import { Game as TicTacToeGame } from 'util/tictactoe/index.js';
 import OMark from 'components/tictactoe/OMark.jsx';
 import XMark from 'components/tictactoe/XMark.jsx';
@@ -119,6 +120,8 @@ class TicTacToe extends Component {
   render() {
     return (
       <div className="ttt">
+        <HomeButton />
+
         <h1 className="ttt-title">
           Tic Tac Toe vs AI
         </h1>

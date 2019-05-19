@@ -6,10 +6,7 @@ const generateHeaders = () => {
   const headers = {
     Accept: 'application/json'
   };
-  const authToken = window.localStorage.getItem('ls.j_token');
-  if (authToken) {
-    headers['Authorization'] = `Token ${authToken}`;
-  }
+
   return headers;
 };
 

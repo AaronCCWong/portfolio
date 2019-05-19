@@ -1,0 +1,61 @@
+@import "sass/shared";
+
+.pos-tagger {
+  background-color: $black;
+  color: $alabaster;
+  font-family: $roboto-light;
+  min-height: 100vh;
+  min-width: 330px;
+  text-align: center;
+}
+
+.pos-tagger--title {
+  font-family: $roboto-regular;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 60px;
+}
+
+.pos-tagger--disclaimer {
+  margin: 0 auto 30px;
+  max-width: 400px;
+}
+
+.pos-tagger--textbox {
+  border: 0;
+  border-radius: 3px;
+  display: block;
+  margin: 0 auto 10px;
+  min-height: 100px;
+  min-width: 300px;
+  padding: 7px;
+  outline: 0;
+}
+
+.pos-tagger--submit-btn {
+  background-color: $dark-blue;
+  border: 0;
+  border-radius: 3px;
+  color: $alabaster;
+  cursor: pointer;
+  padding: 5px 15px;
+  opacity: 0.6;
+  outline: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.pos-tagger--results {
+  margin-top: 20px;
+}
+
+.pos-tagger--tagged-token {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.pos-tagger--token {
+  margin: 5px;
+}
