@@ -13,8 +13,16 @@ class PosTagger extends Component {
       sentenceTags: []
     };
 
+    this.posTaggerUrl = 'https://hmm-pos-tagger-viterbi.herokuapp.com';
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    // Ping heroku service to wake it up
+    const url = `${this.posTaggerUrl}/wakeUp`;
+    Api.get(url);
   }
 
   handleChange(e) {
@@ -25,7 +33,7 @@ class PosTagger extends Component {
   }
 
   handleSubmit() {
-    const url = 'https://hmm-pos-tagger-viterbi.herokuapp.com/tagSentence';
+    const url = `${this.posTaggerUrl}/tagSentence`;
     const params = {
       query: {
         sentence: this.state.sentence
