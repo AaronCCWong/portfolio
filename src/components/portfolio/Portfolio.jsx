@@ -68,6 +68,9 @@ class Portfolio extends Component {
           <a href="//medium.com/@aaronwong_65108">
             <i className="fa fa-medium Portfolio-header--icon" aria-hidden="true" />
           </a>
+          <a href="//blog.aaronccwong.com">
+            <i class="fa fa-rss-square Portfolio-header--icon" aria-hidden="true" />
+          </a>
           <a href="/AaronWong.pdf" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-file-pdf-o Portfolio-header--icon" aria-hidden="true" />
           </a>
