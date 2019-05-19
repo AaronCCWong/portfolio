@@ -7,19 +7,19 @@ const recentPosts = [
     title: 'Building a Bigram Hidden Markov Model for Part-Of-Speech Tagging',
     date: 'May 18, 2019',
     img: '//cdn-images-1.medium.com/max/800/1*JxGuQ-I436JQPLh-UFTcSA.jpeg',
-    url: '//medium.com/@aaronwong_65108/building-a-bigram-hidden-markov-model-for-part-of-speech-tagging-1b784a87ab2c'
+    url: '//blog.aaronccwong.com/2019/building-a-bigram-hidden-markov-model-for-part-of-speech-tagging/'
   },
   {
     title: 'Traffic Sign Classification',
     date: 'Dec 30, 2018',
     img: '//cdn-images-1.medium.com/max/800/1*IN1K7SDIKdOtPjuJcQ9iTw.png',
-    url: '//medium.com/@aaronwong_65108/traffic-sign-classification-6e7113d9c4d5'
+    url: '//blog.aaronccwong.com/2018/traffic-sign-classification/'
   },
   {
     title: 'I created an AI that beats me at tic-tac-toe',
     date: 'Feb 24, 2018',
     img: '//cdn-images-1.medium.com/max/800/1*HHUIYu43qqo1b1BNCZl0tQ.png',
-    url: '//medium.com/@aaronwong_65108/i-created-an-ai-that-beats-me-at-tic-tac-toe-3ea6ba22cd71'
+    url: '//blog.aaronccwong.com/2018/i-created-an-ai-that-beats-me-at-tic-tac-toe/'
   },
   {
     title: 'Notes on elementary graph algorithms. Part 1: Breadth-first search',
