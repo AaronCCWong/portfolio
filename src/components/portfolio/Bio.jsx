@@ -1,6 +1,6 @@
 import React from 'react';
 
-import me from 'images/aaron.webp';
+import me from 'images/aaron.jpeg';
 
 const Bio = () => (
   <section className="Portfolio-section">
