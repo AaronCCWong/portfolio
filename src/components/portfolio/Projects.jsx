@@ -13,7 +13,7 @@ const Projects = () => (
     </h2>
 
     <div className="Projects">
-      <Link to="/pos-tagger">
+      <Link to="/pos-tagger" className="Projects-item--link">
         <div className="Projects-item">
           <div
             style={{
@@ -25,7 +25,7 @@ const Projects = () => (
         </div>
       </Link>
 
-      <a href="https://www.exemplifai.com">
+      <a href="https://www.exemplifai.com" className="Projects-item--link">
         <div className="Projects-item">
           <div
             style={{
@@ -37,7 +37,7 @@ const Projects = () => (
         </div>
       </a>
 
-      <Link to="/tic-tac-toe">
+      <Link to="/tic-tac-toe" className="Projects-item--link">
         <div className="Projects-item">
           <div
             style={{

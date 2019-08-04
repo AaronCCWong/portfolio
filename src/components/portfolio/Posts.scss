@@ -1,7 +1,7 @@
 @import "sass/shared";
 
 .Posts {
-  text-align: center;
+  @include card-container;
 }
 
 .Posts-item {

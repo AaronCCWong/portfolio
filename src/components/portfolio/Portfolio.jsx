@@ -69,7 +69,7 @@ class Portfolio extends Component {
             <i className="fa fa-medium Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a href="//blog.aaronccwong.com">
-            <i class="fa fa-rss-square Portfolio-header--icon" aria-hidden="true" />
+            <i className="fa fa-rss-square Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a
             href="//drive.google.com/file/d/1aWLe3OHYTKQ-wbuAhB-_NHP5OJIQDYNd/view?usp=sharing"
