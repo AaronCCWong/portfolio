@@ -37,7 +37,7 @@ const recentPosts = [
 
 const Posts = () => {
   const renderPosts = () => recentPosts.map(post => (
-    <a href={post.url} key={post.title}>
+    <a href={post.url} key={post.title} className="Posts-item--link">
       <div className="Posts-item">
         <div
           style={{ backgroundImage: `url(${post.img})`, backgroundColor: '#ffffff' }}
