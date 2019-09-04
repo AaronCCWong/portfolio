@@ -2,18 +2,29 @@ import React, { Component } from 'react';
 
 import Api from 'api/api';
 import HomeButton from 'components/home-button/HomeButton';
+import { Spinner } from 'components/spinner/Spinner';
 
 import 'components/pos-tagger/PosTagger.scss';
+
+const POS_TAGGER_URL = 'https://hmm-pos-tagger-viterbi.herokuapp.com';
+
+const setButtonClass = (sentenceLength) => {
+  const defaultClass = 'pos-tagger--submit-btn';
+  if (sentenceLength > 0) {
+    return defaultClass;
+  }
+
+  return `${defaultClass} disabled`;
+};
 
 class PosTagger extends Component {
   constructor() {
     super();
     this.state = {
+      loading: false,
       sentence: '',
       sentenceTags: []
     };
-
-    this.posTaggerUrl = 'https://hmm-pos-tagger-viterbi.herokuapp.com';
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +32,7 @@ class PosTagger extends Component {
 
   componentDidMount() {
     // Ping heroku service to wake it up
-    const url = `${this.posTaggerUrl}/wakeUp`;
+    const url = `${POS_TAGGER_URL}/wakeUp`;
     Api.get(url);
   }
 
@@ -33,18 +44,23 @@ class PosTagger extends Component {
   }
 
   handleSubmit() {
-    const url = `${this.posTaggerUrl}/tagSentence`;
-    const params = {
-      query: {
-        sentence: this.state.sentence
-      }
-    };
+    if (this.state.sentence.length > 0) {
+      this.setState({ loading: true });
+      const url = `${POS_TAGGER_URL}/tagSentence`;
+      const params = {
+        query: {
+          sentence: this.state.sentence
+        }
+      };
 
-    Api.get(url, params).then(res => this.setState({ sentenceTags: res }));
+      Api.get(url, params).then(res => this.setState({ sentenceTags: res, loading: false }));
+    }
   }
 
   renderTagResult() {
-    if (this.state.sentenceTags.length > 0) {
+    if (this.state.loading) {
+      return <Spinner className="pos-tagger--spinner" />;
+    } else if (this.state.sentenceTags.length > 0) {
       return (
         <div className="pos-tagger--results">
           {this.renderTaggedSentence()}
@@ -99,7 +115,7 @@ class PosTagger extends Component {
         </label>
 
         <button
-          className="pos-tagger--submit-btn"
+          className={setButtonClass(this.state.sentence.length)}
           onClick={this.handleSubmit}>
           Tag
         </button>

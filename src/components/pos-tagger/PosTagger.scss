@@ -39,12 +39,18 @@
   color: $alabaster;
   cursor: pointer;
   padding: 5px 15px;
-  opacity: 0.6;
+  opacity: 1;
   outline: 0;
 
-  &:hover {
-    opacity: 1;
+  &.disabled {
+    cursor: initial;
+    opacity: 0.6;
   }
+}
+
+.pos-tagger--spinner {
+  display: block;
+  margin: 20px auto 0;
 }
 
 .pos-tagger--results {
