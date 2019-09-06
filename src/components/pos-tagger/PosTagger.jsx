@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Api from 'api/api';
 import HomeButton from 'components/home-button/HomeButton';
-import { Spinner } from 'components/spinner/Spinner';
+import Spinner from 'components/spinner/Spinner';
 
 import 'components/pos-tagger/PosTagger.scss';
 

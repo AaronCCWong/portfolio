@@ -1,7 +1,7 @@
 // src: https://github.com/SamHerbert/SVG-Loaders
 import React from 'react';
 
-export const Spinner = ({ className }) => (
+const Spinner = ({ className }) => (
   <svg className={className} width="57" height="57" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
     <g fill="none" fill-rule="evenodd">
       <g transform="translate(1 1)" stroke-width="2">
@@ -50,3 +50,5 @@ export const Spinner = ({ className }) => (
     </g>
   </svg>
 );
+
+export default Spinner;
