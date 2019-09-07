@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
 import Api from 'api/api';
 import HomeButton from 'components/home-button/HomeButton';
@@ -17,60 +17,80 @@ const setButtonClass = (sentenceLength) => {
   return `${defaultClass} disabled`;
 };
 
-class PosTagger extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: false,
-      sentence: '',
-      sentenceTags: []
-    };
+const initialState = {
+  loading: false,
+  sentence: '',
+  sentenceTags: []
+};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+const actionType = {
+  CHANGE_INPUT: 'CHANGE_INPUT',
+  RECEIVE_RESPONSE: 'RECEIVE_RESPONSE',
+  SET_LOADING: 'SET_LOADING'
+} 
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case actionType.CHANGE_INPUT:
+      return { 
+        ...state,
+        sentence: action.payload,
+        sentenceTags: []
+      };
+    case actionType.RECEIVE_RESPONSE:
+      return {
+        ...state,
+        loading: false,
+        sentenceTags: action.payload
+      };
+    case actionType.SET_LOADING:
+      return { ...state, loading: true };
+    default:
+      return state;
   }
+};
 
-  componentDidMount() {
+const PosTagger = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
     // Ping heroku service to wake it up
     const url = `${POS_TAGGER_URL}/wakeUp`;
     Api.get(url);
+  }, []);
+
+  const handleChange = (e) => {
+    dispatch({ type: actionType.CHANGE_INPUT, payload: e.target.value });
   }
 
-  handleChange(e) {
-    this.setState({
-      sentence: e.target.value,
-      sentenceTags: []
-    });
-  }
-
-  handleSubmit() {
-    if (this.state.sentence.length > 0) {
-      this.setState({ loading: true });
+  const handleSubmit = () => {
+    if (state.sentence.length > 0) {
+      dispatch({ type: actionType.SET_LOADING });
       const url = `${POS_TAGGER_URL}/tagSentence`;
       const params = {
-        query: {
-          sentence: this.state.sentence
-        }
+        query: { sentence: state.sentence }
       };
 
-      Api.get(url, params).then(res => this.setState({ sentenceTags: res, loading: false }));
+      Api.get(url, params).then((res) => {
+        dispatch({ type: actionType.RECEIVE_RESPONSE, payload: res });
+      });
     }
   }
 
-  renderTagResult() {
-    if (this.state.loading) {
+  const renderTagResult = () => {
+    if (state.loading) {
       return <Spinner className="pos-tagger--spinner" />;
-    } else if (this.state.sentenceTags.length > 0) {
+    } else if (state.sentenceTags.length > 0) {
       return (
         <div className="pos-tagger--results">
-          {this.renderTaggedSentence()}
+          {renderTaggedSentence()}
         </div>
       );
     }
   }
 
-  renderTaggedSentence() {
-    const tokens = this.state.sentence.split(' ');
+  const renderTaggedSentence = () => {
+    const tokens = state.sentence.split(' ');
     const tagComponents = tokens.map((token, idx) => (
       <div className="pos-tagger--tagged-token">
         <p className="pos-tagger--token">
@@ -80,7 +100,7 @@ class PosTagger extends Component {
         <i className="fa fa-arrows-v" aria-hidden="true" />
 
         <p className="pos-tagger--token">
-          {this.state.sentenceTags[idx]}
+          {state.sentenceTags[idx]}
         </p>
       </div>
     ));
@@ -88,42 +108,40 @@ class PosTagger extends Component {
     return tagComponents;
   }
 
-  render() {
-    return (
-      <div className="pos-tagger">
-        <HomeButton />
+  return (
+    <div className="pos-tagger">
+      <HomeButton />
 
-        <h1 className="pos-tagger--title">
-          A Bigram Hidden Markov Model Part-Of-Speech Tagger using Viterbi for Decoding
-        </h1>
+      <h1 className="pos-tagger--title">
+        A Bigram Hidden Markov Model Part-Of-Speech Tagger using Viterbi for Decoding
+      </h1>
 
-        <p className="pos-tagger--disclaimer">
-          The HMM was trained on the WSJ corpus so sentences that are too far out of context from WSJ sentences may result in garbage output.
-          The tokenizer splits the string based on space so punctuation may not be tagged properly either.
+      <p className="pos-tagger--disclaimer">
+        The HMM was trained on the WSJ corpus so sentences that are too far out of context from WSJ sentences may result in garbage output.
+        The tokenizer splits the string based on space so punctuation may not be tagged properly either.
+      </p>
+
+      <label>
+        <p>
+          Enter the sentence you want to tag:
         </p>
 
-        <label>
-          <p>
-            Enter the sentence you want to tag:
-          </p>
+        <textarea
+          className="pos-tagger--textbox"
+          value={state.sentence}
+          onChange={handleChange}
+        />
+      </label>
 
-          <textarea
-            className="pos-tagger--textbox"
-            value={this.state.sentence}
-            onChange={this.handleChange}
-          />
-        </label>
+      <button
+        className={setButtonClass(state.sentence.length)}
+        onClick={handleSubmit}>
+        Tag
+      </button>
 
-        <button
-          className={setButtonClass(this.state.sentence.length)}
-          onClick={this.handleSubmit}>
-          Tag
-        </button>
-
-        {this.renderTagResult()}
-      </div>
-    );
-  }
+      {renderTagResult()}
+    </div>
+  );
 }
 
 export default PosTagger;
