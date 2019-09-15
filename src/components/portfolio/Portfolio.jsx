@@ -72,7 +72,7 @@ class Portfolio extends Component {
             <i className="fa fa-rss-square Portfolio-header--icon" aria-hidden="true" />
           </a>
           <a
-            href="//drive.google.com/file/d/1aWLe3OHYTKQ-wbuAhB-_NHP5OJIQDYNd/view?usp=sharing"
+            href="//drive.google.com/file/d/1drADLhTwL_rAPHDsBDAcvM_zoey6Uth_/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer">
             <i className="fa fa-file-pdf-o Portfolio-header--icon" aria-hidden="true" />
