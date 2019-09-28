@@ -90,7 +90,7 @@ const PosTagger = () => {
   }
 
   const renderTaggedSentence = () => {
-    const tokens = state.sentence.split(' ');
+    const tokens = state.sentence.trim().split(' ');
     const tagComponents = tokens.map((token, idx) => (
       <div className="pos-tagger--tagged-token">
         <p className="pos-tagger--token">
