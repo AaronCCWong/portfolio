@@ -36,10 +36,8 @@ class Portfolio extends Component {
           Aaron.
           <Typist.Backspace count={6} delay={400} />
           <Typist.Delay ms={200} />
-          a software developer.
+          a software engineer.
           <Typist.Backspace count={20} delay={400} />
-          n MSCS student at NYU.
-          <Typist.Backspace count={23} delay={400} />
         </Typist>
       );
     }
