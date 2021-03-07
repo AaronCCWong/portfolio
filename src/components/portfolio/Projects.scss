@@ -7,3 +7,7 @@
 .Projects-item {
   @include card-item;
 }
+
+.Projects-item--link {
+  margin-bottom: 15px;
+}
