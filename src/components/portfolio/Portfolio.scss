@@ -68,6 +68,8 @@
 .Portfolio-section--bio {
   display: inline-block;
   font-family: $roboto-regular;
+  font-size: 22px;
+  line-height: 28px;
 }
 
 .Typist {
@@ -82,15 +84,24 @@
   cursor: pointer;
 }
 
+.Portfolio-section--bio-title {
+  font-family: $roboto-bold;
+}
+
 @media (min-width: $md) {
   .Portfolio-section--me-container {
     display: inline-block;
     width: 25%;
+    margin-right: 15px;
+  }
+
+  .Portfolio-section--about {
+    display: flex;
+    align-items: center;
   }
 
   .Portfolio-section--bio {
-    position: relative;
-    top: -60px;
-    width: 73%;
+    font-size: 18px;
+    line-height: 22px;
   }
 }

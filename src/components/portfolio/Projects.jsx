@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import 'components/portfolio/Projects.scss';
-import exemplifai from 'images/exemplifai.jpeg';
 import ttt from 'images/ttt.jpg';
 import taggedSentence from 'images/taggedsentence.jpg'
 
@@ -24,18 +23,6 @@ const Projects = () => (
           <h3 className="Posts-item--title">A Bigram HMM Part-Of-Speech Tagger using Viterbi for Decoding</h3>
         </div>
       </Link>
-
-      <a href="https://www.exemplifai.com" className="Projects-item--link">
-        <div className="Projects-item">
-          <div
-            style={{
-              backgroundImage: `url(${exemplifai})`
-            }}
-            className="Posts-item--img"
-          />
-        <h3 className="Posts-item--title">Exemplifai (WIP)</h3>
-        </div>
-      </a>
 
       <Link to="/tic-tac-toe" className="Projects-item--link">
         <div className="Projects-item">

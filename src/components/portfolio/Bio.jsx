@@ -10,8 +10,8 @@ const Bio = () => (
       </div>
 
       <p className="Portfolio-section--bio">
-        <b>Bio.</b> I am a software engineer with a master's degree in computer science specializing in intelligent systems. I am particularly
-        interested in machine learning and its applications to computer vision and natural language processing.
+        <span className="Portfolio-section--bio-title">Bio.</span> I am a software development engineer at Amazon.
+        I love learning about machine learning and its applications to computer vision and natural language processing.
         In my spare time, I enjoy building web and mobile apps.
       </p>
     </div>

@@ -16,6 +16,7 @@ $light-blue: #3488f5;
 $white: #ffffff;
 
 // fonts
+$roboto-bold: "RobotoBold";
 $roboto-regular: "RobotoRegular";
 $roboto-medium: "RobotoMedium";
 $roboto-light: "RobotoLight";
@@ -41,7 +42,7 @@ a {
   background-color: $bastille;
   border-radius: 3px;
   color: $alabaster;
-  margin: 0 15px 15px;
+  margin: 0 15px;
   overflow: hidden;
   transition: all .3s;
   text-decoration: none;
