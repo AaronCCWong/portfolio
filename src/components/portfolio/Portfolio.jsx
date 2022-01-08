@@ -63,6 +63,9 @@ class Portfolio extends Component {
           <a href="//www.linkedin.com/in/aaron-wong-92041342/">
             <i className="fa fa-linkedin Portfolio-header--icon" aria-hidden="true" />
           </a>
+          <a href="//twitter.com/aar_wong">
+            <i className="fa fa-twitter Portfolio-header--icon" aria-hidden="true" />
+          </a>
           <a href="//medium.com/@aaronwong_65108">
             <i className="fa fa-medium Portfolio-header--icon" aria-hidden="true" />
           </a>
