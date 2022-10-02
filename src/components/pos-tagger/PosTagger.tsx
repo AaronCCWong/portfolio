@@ -1,14 +1,14 @@
-import React, { useReducer, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
 
-import Api from 'api/api';
-import HomeButton from 'components/home-button/HomeButton';
-import Spinner from 'components/spinner/Spinner';
+import Api from '../../api/api';
+import HomeButton from '../home-button/HomeButton';
+import { Spinner } from '../spinner/Spinner';
 
-import 'components/pos-tagger/PosTagger.scss';
+import './PosTagger.scss';
 
 const POS_TAGGER_URL = 'https://hmm-pos-tagger-viterbi.herokuapp.com';
 
-const setButtonClass = (sentenceLength) => {
+const setButtonClass = (sentenceLength: number) => {
   const defaultClass = 'pos-tagger--submit-btn';
   if (sentenceLength > 0) {
     return defaultClass;
@@ -23,34 +23,34 @@ const initialState = {
   sentenceTags: []
 };
 
-const actionType = {
-  CHANGE_INPUT: 'CHANGE_INPUT',
-  RECEIVE_RESPONSE: 'RECEIVE_RESPONSE',
-  SET_LOADING: 'SET_LOADING'
+enum ActionType {
+  CHANGE_INPUT = 'CHANGE_INPUT',
+  RECEIVE_RESPONSE = 'RECEIVE_RESPONSE',
+  SET_LOADING = 'SET_LOADING'
 } 
 
-const reducer = (state, action) => {
+const reducer = (state = initialState, action: { type: ActionType, payload?: any }) => {
   switch (action.type) {
-    case actionType.CHANGE_INPUT:
+    case ActionType.CHANGE_INPUT:
       return { 
         ...state,
         sentence: action.payload,
         sentenceTags: []
       };
-    case actionType.RECEIVE_RESPONSE:
+    case ActionType.RECEIVE_RESPONSE:
       return {
         ...state,
         loading: false,
         sentenceTags: action.payload
       };
-    case actionType.SET_LOADING:
+    case ActionType.SET_LOADING:
       return { ...state, loading: true };
     default:
       return state;
   }
 };
 
-const PosTagger = () => {
+export const PosTagger = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -59,20 +59,20 @@ const PosTagger = () => {
     Api.get(url);
   }, []);
 
-  const handleChange = (e) => {
-    dispatch({ type: actionType.CHANGE_INPUT, payload: e.target.value });
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    dispatch({ type: ActionType.CHANGE_INPUT, payload: event.target.value });
   }
 
   const handleSubmit = () => {
     if (state.sentence.length > 0) {
-      dispatch({ type: actionType.SET_LOADING });
+      dispatch({ type: ActionType.SET_LOADING });
       const url = `${POS_TAGGER_URL}/tagSentence`;
       const params = {
         query: { sentence: state.sentence.trim() }
       };
 
       Api.get(url, params).then((res) => {
-        dispatch({ type: actionType.RECEIVE_RESPONSE, payload: res });
+        dispatch({ type: ActionType.RECEIVE_RESPONSE, payload: res });
       });
     }
   }
@@ -91,7 +91,7 @@ const PosTagger = () => {
 
   const renderTaggedSentence = () => {
     const tokens = state.sentence.trim().split(' ');
-    const tagComponents = tokens.map((token, idx) => (
+    const tagComponents = tokens.map((token: string, idx: number) => (
       <div className="pos-tagger--tagged-token">
         <p className="pos-tagger--token">
           {token}
@@ -143,5 +143,3 @@ const PosTagger = () => {
     </div>
   );
 }
-
-export default PosTagger;

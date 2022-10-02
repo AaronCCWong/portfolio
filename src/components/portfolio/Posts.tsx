@@ -1,6 +1,4 @@
-import React from 'react';
-
-import 'components/portfolio/Posts.scss';
+import './Posts.scss';
 
 const recentPosts = [
   {

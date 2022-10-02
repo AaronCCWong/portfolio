@@ -1,8 +1,9 @@
-// src: https://github.com/SamHerbert/SVG-Loaders
-import React from 'react';
+type Props = {
+  className: string;
+};
 
-const Spinner = ({ className }) => (
-  <svg className={className} width="57" height="57" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+export const Spinner: React.FunctionComponent<Props> = (props) => (
+  <svg className={props.className} width="57" height="57" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
     <g fill="none" fillRule="evenodd">
       <g transform="translate(1 1)" strokeWidth="2">
         <circle cx="5" cy="50" r="5">
@@ -50,5 +51,3 @@ const Spinner = ({ className }) => (
     </g>
   </svg>
 );
-
-export default Spinner;

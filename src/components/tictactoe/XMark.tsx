@@ -1,6 +1,8 @@
-import React from 'react';
+type Props = {
+  className?: string;
+};
 
-const XMark = ({ className }) => (
+export const XMark: React.FunctionComponent<Props> = ({ className }) => (
   <svg className={className} height="100" width="100">
     <line
       x1="10"
@@ -22,5 +24,3 @@ const XMark = ({ className }) => (
     />
   </svg>
 );
-
-export default XMark;

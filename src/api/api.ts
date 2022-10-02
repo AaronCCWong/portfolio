@@ -1,8 +1,8 @@
 import queryString from 'query-string';
 
-const request = (url, data) => fetch(url, data);
+const request = (url: string, data: any) => fetch(url, data);
 
-const generateHeaders = () => {
+const generateHeaders = (): Record<string, string> => {
   const headers = {
     Accept: 'application/json'
   };
@@ -10,8 +10,8 @@ const generateHeaders = () => {
   return headers;
 };
 
-const generateData = (method, body) => {
-  const data = {
+const generateData = (method: string, body?: Record<string, unknown>) => {
+  const data: Record<string, any> = {
     method: method,
     headers: generateHeaders(),
   };
@@ -26,7 +26,7 @@ const generateData = (method, body) => {
   return data;
 }
 
-const generateFullUrl = (url, query) => {
+const generateFullUrl = (url: string, query?: Record<string, string>) => {
   let fullUrl = `${url}`;
   if (query) {
     fullUrl = `${fullUrl}?${queryString.stringify(query)}`;
@@ -34,7 +34,7 @@ const generateFullUrl = (url, query) => {
   return fullUrl;
 };
 
-const parseResponse = (res) => {
+const parseResponse = (res: Response) => {
   if (res.status === 204) {
     return null; // No content returned from server
   } else if (res.status >= 200 && res.status < 300) {
@@ -42,37 +42,36 @@ const parseResponse = (res) => {
   } else {
     return res.json().then(err => {
       const error = new Error(res.statusText);
-      error.body = { ...err };
       throw error;
     });
   }
 };
 
 class Api {
-  static fetch(method, url, { body, query }) {
+  static fetch(method: string, url: string, { body, query }: { body?: Record<string, unknown>, query?: Record<string, string> }) {
     return request(
       generateFullUrl(url, query),
       generateData(method, body)
     ).then(parseResponse);
   }
 
-  static get(url, params={}) {
+  static get(url: string, params={}) {
     return Api.fetch('GET', url, params);
   }
 
-  static post(url, params={}) {
+  static post(url: string, params={}) {
     return Api.fetch('POST', url, params);
   }
 
-  static put(url, params={}) {
+  static put(url: string, params={}) {
     return Api.fetch('PUT', url, params);
   }
 
-  static patch(url, params={}) {
+  static patch(url: string, params={}) {
     return Api.fetch('PATCH', url, params);
   }
 
-  static delete(url, params={}) {
+  static delete(url: string, params={}) {
     return Api.fetch('DELETE', url, params);
   }
 }

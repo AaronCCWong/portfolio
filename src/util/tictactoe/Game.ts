@@ -1,8 +1,13 @@
-import Board from 'util/tictactoe/Board.js';
-import ComputerPlayer from 'util/tictactoe/ComputerPlayer.js';
-import HumanPlayer from 'util/tictactoe/HumanPlayer.js';
+import { Board, GamePosition } from './Board';
+import { ComputerPlayer } from './ComputerPlayer';
+import { HumanPlayer } from './HumanPlayer';
 
-class Game {
+export class Game {
+  private tttboard: Board;
+  public humanPlayer: HumanPlayer;
+  public computerPlayer: ComputerPlayer;
+  public currentPlayer: HumanPlayer | ComputerPlayer;
+
   constructor() {
     this.tttboard = new Board();
     this.humanPlayer = new HumanPlayer('x');
@@ -30,7 +35,7 @@ class Game {
     return this.tttboard.winner(this);
   }
 
-  makeMove(pos) {
+  makeMove(pos: GamePosition) {
     this.tttboard.placeMark(pos, this.currentPlayer);
     if (this.gameOver) {
       return;
@@ -42,5 +47,3 @@ class Game {
     }
   }
 }
-
-export default Game;

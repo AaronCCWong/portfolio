@@ -1,6 +1,15 @@
-class Board {
-  static generateSimBoard(board, pos, mark) {
-    const newBoard = [['', '', ''], ['', '', ''], ['', '', '']];
+import { Game } from "./Game";
+import { Player } from "./Player";
+
+export type ValidGameBoardMark = 'x' | 'o';
+export type AllGameBoardMarks = '' | 'x' | 'o';
+export type GameBoardRow = [AllGameBoardMarks, AllGameBoardMarks, AllGameBoardMarks];
+export type GameBoard = [GameBoardRow, GameBoardRow, GameBoardRow];
+export type GamePosition = [number, number];
+
+export class Board {
+  static generateSimBoard(board: GameBoard, pos: GamePosition, mark: ValidGameBoardMark) {
+    const newBoard: GameBoard = [['', '', ''], ['', '', ''], ['', '', '']];
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         newBoard[i][j] = board[i][j];
@@ -11,7 +20,9 @@ class Board {
     return simBoard;
   }
 
-  constructor(board) {
+  public board: GameBoard;
+
+  constructor(board?: GameBoard) {
     this.board = board ||
     [
       ['', '', ''],
@@ -20,7 +31,7 @@ class Board {
     ];
   }
 
-  placeMark(pos, player) {
+  placeMark(pos: [number, number], player: Player) {
     this.board[pos[0]][pos[1]] = player.mark;
   }
 
@@ -35,7 +46,7 @@ class Board {
     return true;
   }
 
-  winner(game) {
+  winner(game: Game) {
     if (this.verticalWin(game.humanPlayer.mark) ||
       this.horizontalWin(game.humanPlayer.mark) ||
       this.diagonalWin(game.humanPlayer.mark)) {
@@ -44,7 +55,7 @@ class Board {
     return game.computerPlayer;
   }
 
-  won(mark) {
+  won(mark: ValidGameBoardMark) {
     if (!this.isEmpty() && (this.verticalWin(mark) || this.horizontalWin(mark) || this.diagonalWin(mark))) {
       return true;
     }
@@ -71,7 +82,7 @@ class Board {
     return false;
   }
 
-  verticalWin(mark) {
+  verticalWin(mark: ValidGameBoardMark) {
     if ((mark === this.board[0][0] && this.board[0][0] === this.board[0][1] && this.board[0][0] === this.board[0][2]) ||
       (mark === this.board[1][0] && this.board[1][0] === this.board[1][1] && this.board[1][0] === this.board[1][2]) ||
       (mark === this.board[2][0] && this.board[2][0] === this.board[2][1] && this.board[2][0] === this.board[2][2])) {
@@ -80,7 +91,7 @@ class Board {
     return false;
   }
 
-  horizontalWin(mark) {
+  horizontalWin(mark: ValidGameBoardMark) {
     if ((mark === this.board[0][0] && this.board[0][0] === this.board[1][0] && this.board[0][0] === this.board[2][0]) ||
       (mark === this.board[0][1] && this.board[0][1] === this.board[1][1] && this.board[0][1] === this.board[2][1]) ||
       (mark === this.board[0][2] && this.board[0][2] === this.board[1][2] && this.board[0][2] === this.board[2][2])) {
@@ -89,7 +100,7 @@ class Board {
     return false;
   }
 
-  diagonalWin(mark) {
+  diagonalWin(mark: ValidGameBoardMark) {
     if ((mark === this.board[0][0] && this.board[0][0] === this.board[1][1] && this.board[0][0] === this.board[2][2]) ||
       (mark === this.board[0][2] && this.board[0][2] === this.board[1][1] && this.board[0][2] === this.board[2][0])) {
       return true;
@@ -97,5 +108,3 @@ class Board {
     return false;
   }
 }
-
-export default Board;

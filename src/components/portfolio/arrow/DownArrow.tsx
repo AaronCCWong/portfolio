@@ -1,6 +1,4 @@
-import React from 'react';
-
-import 'components/portfolio/arrow/DownArrow.scss';
+import './DownArrow.scss';
 
 const DownArrow = () => (
   <div className="Portfolio-down-arrow" />

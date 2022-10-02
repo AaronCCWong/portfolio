@@ -1,19 +1,24 @@
-import Player from 'util/tictactoe/Player.js';
-import Board from 'util/tictactoe/Board.js';
+import { Player } from './Player';
+import { Board, GameBoard, GamePosition, ValidGameBoardMark } from './Board';
+import { Game } from './Game';
 
-class ComputerPlayer extends Player {
-  constructor(mark) {
+type BestMove = { utility: number, pos?: GamePosition };
+
+export class ComputerPlayer extends Player {
+  private humanMark: ValidGameBoardMark;
+
+  constructor(mark: ValidGameBoardMark) {
     super(mark, false);
     this.humanMark = mark === 'x' ? 'o' : 'x';
   }
 
-  choosePosition(game) {
+  choosePosition(game: Game) {
     const bestMove = this.minimax(game.board);
-    game.makeMove(bestMove.pos);
+    game.makeMove(bestMove.pos as GamePosition);
   }
 
-  minimax(board) {
-    let bestMove = { utility: Number.NEGATIVE_INFINITY };
+  minimax(board: GameBoard) {
+    let bestMove: BestMove = { utility: Number.NEGATIVE_INFINITY };
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         if (!board[i][j]) {
@@ -33,7 +38,7 @@ class ComputerPlayer extends Player {
     return bestMove;
   }
 
-  minVal(board) {
+  minVal(board: Board) {
     if (board.gameOver()) {
       if (board.won(this.mark)) {
         return 1;
@@ -61,7 +66,7 @@ class ComputerPlayer extends Player {
     return utility;
   }
 
-  maxVal(board) {
+  maxVal(board: Board) {
     if (board.gameOver()) {
       if (board.won(this.humanMark)) {
         return -1;
@@ -89,5 +94,3 @@ class ComputerPlayer extends Player {
     return utility;
   }
 }
-
-export default ComputerPlayer;

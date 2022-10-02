@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-import 'components/portfolio/Projects.scss';
-import ttt from 'images/ttt.jpg';
-import taggedSentence from 'images/taggedsentence.jpg'
+import taggedSentence from '../../images/taggedsentence.jpg';
+import ttt from '../../images/ttt.jpg';
+import './Projects.scss';
 
 const Projects = () => (
   <section className="Portfolio-section">
