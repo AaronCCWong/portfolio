@@ -65,7 +65,7 @@ export const Portfolio: React.FunctionComponent = () => {
           <i className="fa fa-rss-square Portfolio-header--icon" aria-hidden="true" />
         </a>
         <a
-          href="//drive.google.com/file/d/1drADLhTwL_rAPHDsBDAcvM_zoey6Uth_/view?usp=sharing"
+          href="//drive.google.com/file/d/14Hxl_PuHHR2mjN_JKDrFJpp7B32ysdLl/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer">
           <i className="fa fa-file-pdf-o Portfolio-header--icon" aria-hidden="true" />
