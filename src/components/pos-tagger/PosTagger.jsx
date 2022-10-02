@@ -68,7 +68,7 @@ const PosTagger = () => {
       dispatch({ type: actionType.SET_LOADING });
       const url = `${POS_TAGGER_URL}/tagSentence`;
       const params = {
-        query: { sentence: encodeURI(state.sentence.trim()) }
+        query: { sentence: state.sentence.trim() }
       };
 
       Api.get(url, params).then((res) => {

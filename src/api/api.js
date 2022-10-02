@@ -1,3 +1,5 @@
+import queryString from 'query-string';
+
 const request = (url, data) => fetch(url, data);
 
 const generateHeaders = () => {
@@ -27,7 +29,7 @@ const generateData = (method, body) => {
 const generateFullUrl = (url, query) => {
   let fullUrl = `${url}`;
   if (query) {
-    fullUrl = `${fullUrl}?${new URLSearchParams(query).toString()}`;
+    fullUrl = `${fullUrl}?${queryString.stringify(query)}`;
   }
   return fullUrl;
 };
