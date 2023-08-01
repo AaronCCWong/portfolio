@@ -9,5 +9,12 @@
 }
 
 .Projects-item--link {
+  flex: 1;
   margin-bottom: 15px;
+}
+
+@media (min-width: $md) {
+  .Projects-item--link {
+    flex: 0;
+  }
 }

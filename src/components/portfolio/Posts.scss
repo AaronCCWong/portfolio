@@ -2,6 +2,7 @@
 
 .Posts {
   @include card-container;
+  flex-direction: column;
 }
 
 .Posts-item {
@@ -25,5 +26,22 @@
 }
 
 .Posts-item--link {
+  flex: 1;
   margin-bottom: 15px;
+}
+
+@media (min-width: $md) {
+  .Posts {
+    justify-content: center;
+  }
+
+  .Posts-item--link {
+    flex: 0;
+  }
+}
+
+@media (min-width: $lg) {
+  .Posts {
+    justify-content: flex-start;
+  }
 }

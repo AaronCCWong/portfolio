@@ -33,6 +33,11 @@ a {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  flex-direction: column;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+  }
 }
 
 @mixin card-item {
@@ -45,10 +50,17 @@ a {
   overflow: hidden;
   transition: all .3s;
   text-decoration: none;
-  width: 300px;
 
   &:hover {
     background-color: $hover-gray;
+  }
+
+  @media (min-width: $md) {
+    width: 350px;
+  }
+
+  @media (min-width: $lg) {
+    width: 300px;
   }
 }
 

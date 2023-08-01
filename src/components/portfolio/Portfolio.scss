@@ -89,6 +89,12 @@
 }
 
 @media (min-width: $md) {
+  .Portfolio-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .Portfolio-section--me-container {
     display: inline-block;
     width: 25%;
@@ -103,5 +109,13 @@
   .Portfolio-section--bio {
     font-size: 18px;
     line-height: 22px;
+  }
+}
+
+@media (min-width: $lg) {
+  .Portfolio-section {
+    display: block;
+    flex-direction: column;
+    align-items: center;
   }
 }
